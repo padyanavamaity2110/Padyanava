@@ -1,0 +1,70 @@
+body {
+    background-color: azure;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+p {
+    color: aqua;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+
+}
+
+a {
+    color: aquamarine;
+}
+
+hr {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.btn {
+    
+    background-color: #23272a;
+    color: aliceblue;
+    padding: 10px;
+    text-decoration:none;
+}
+
+.insta {
+    background-color: palevioletred;
+}
+
+.what {
+background-color: #111;
+color: #1ef35a;
+}
+
+.nirban2110 {
+    color: cornflowerblue;
+}
+
+#Home {
+    background-image: url(https://imgs.search.brave.com/4xXJE8QRrqQdzfeAaSWuyVL4bfLgiaVoLe0BzWaigV8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBl/cnRwaG90b2dyYXBo/eS5iLWNkbi5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMTkv/MTEvc3RvY2stcGhv/dG9ncmFwaHktbGFw/dG9wLXdpdGgtVW5z/cGxhc2gtZnJlZS1n/YWxsZXJ5LmpwZw);
+}
+
+#discord {
+    background-color: #23272a;
+}
+
+#instagram {
+    background-color: rgb(199, 15, 215);
+}
+
+#whatsapp {
+    background-color: chartreuse;
+    color: #23272a;
+}
+
+table {
+    align-content: center;
+}
+
+.cape {
+    text-align: left;
+}
