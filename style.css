@@ -16,7 +16,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 21px;
   font-family: 'Poppins', sans-serif;
   transition: background 0.3s, color 0.3s;
   line-height: 1.6;
@@ -31,7 +31,7 @@ body.dark-mode {
 
 header, section, footer, .content-container {
   padding: 20px;
-  max-width: 900px;
+  max-width: 800px;
   margin: 20px auto;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -46,6 +46,7 @@ body.dark-mode footer,
 body.dark-mode .content-container {
   background-color: var(--bg-dark-secondary);
   color: var(--text-dark);
+  max-width: 800px;
   box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
 }
 
