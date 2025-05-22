@@ -1,70 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --bg-light: #f5efeb;
+  --text-light: #313c3e;
+  --accent-light: #56878d;
+
+  --bg-dark: #31323e;
+  --bg-dark-secondary: #212020;
+  --text-dark: #C6C2C3;
+  --accent-dark: #383636;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-color: azure;
-    margin-left: 80px;
-    margin-right: 80px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  line-height: 1.6;
+  background-color: var(--bg-light);
+  color: var(--text-light);
 }
 
-p {
-    color: aqua;
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
-h1 {
-    color: blue;
-    text-align: center;
-
+header, section, footer, .content-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
 }
 
-a {
-    color: aquamarine;
+body.dark-mode header,
+body.dark-mode section,
+body.dark-mode footer,
+body.dark-mode .content-container {
+  background-color: var(--bg-dark-secondary);
+  color: var(--text-dark);
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
 }
 
-hr {
-    margin-left: 20px;
-    margin-right: 20px;
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100vh;
+  background-color: var(--bg-light);
+  padding: 20px;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 999;
 }
 
-.btn {
-    
-    background-color: #23272a;
-    color: aliceblue;
-    padding: 10px;
-    text-decoration:none;
+body.dark-mode .side-menu {
+  background-color: var(--bg-dark-secondary);
 }
 
-.insta {
-    background-color: palevioletred;
+.side-menu.active {
+  left: 0;
 }
 
-.what {
-background-color: #111;
-color: #1ef35a;
+.side-menu .close-menu {
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 20px;
+  color: var(--text-light);
 }
 
-.nirban2110 {
-    color: cornflowerblue;
+body.dark-mode .side-menu .close-menu {
+  color: var(--text-dark);
 }
 
-#Home {
-    background-image: url(https://imgs.search.brave.com/4xXJE8QRrqQdzfeAaSWuyVL4bfLgiaVoLe0BzWaigV8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBl/cnRwaG90b2dyYXBo/eS5iLWNkbi5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMTkv/MTEvc3RvY2stcGhv/dG9ncmFwaHktbGFw/dG9wLXdpdGgtVW5z/cGxhc2gtZnJlZS1n/YWxsZXJ5LmpwZw);
+.side-menu .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-#discord {
-    background-color: #23272a;
+.side-menu .nav-links li {
+  margin: 10px 0;
 }
 
-#instagram {
-    background-color: rgb(199, 15, 215);
+.side-menu .nav-links a {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px 16px;
+  display: block;
+  border-radius: 8px;
+  transition: background 0.2s;
 }
 
-#whatsapp {
-    background-color: chartreuse;
-    color: #23272a;
+.side-menu .nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-table {
-    align-content: center;
+body.dark-mode .side-menu .nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.cape {
-    text-align: left;
+/* Nav Toggle Button */
+.nav-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: var(--accent-light);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 22px;
+  transition: left 0.3s ease, background 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+/* Icon color in light mode */
+.nav-toggle #menu-icon {
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .nav-toggle {
+  background: var(--accent-dark);
+  color: var(--text-dark);
+}
+
+/* Icon color in dark mode */
+body.dark-mode .nav-toggle #menu-icon {
+  color: var(--text-dark);
+}
+
+/* When menu is open */
+.nav-toggle.menu-open {
+  left: 260px;
+  background: var(--accent-dark);
+  color: var(--text-dark);
+}
+
+/* Keep icon color consistent when menu open */
+.nav-toggle.menu-open #menu-icon {
+  color: var(--text-dark);
+}
+
+/* === Sliding Theme Toggle Switch === */
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  margin-top: 30px;
+}
+
+/* Hide the native checkbox */
+.theme-toggle input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider track */
+.theme-toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--accent-light);
+  transition: background-color 0.4s ease;
+  border-radius: 34px;
+}
+
+/* The slider knob */
+.theme-toggle .slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+/* Checked state - slider background changes */
+.theme-toggle input:checked + .slider {
+  background-color: var(--accent-dark);
+}
+
+/* Checked state - knob slides right */
+.theme-toggle input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+/* Dark mode overrides */
+body.dark-mode .theme-toggle .slider {
+  background-color: var(--accent-light);
+}
+
+body.dark-mode .theme-toggle input:checked + .slider {
+  background-color: var(--accent-dark);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

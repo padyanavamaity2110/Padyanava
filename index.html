@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Padyanava Maity Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body id="Home" >
-    <h1>My First Page!</h1>
-    <p>
-        <b>Im Padyanava Maity</b>
-        <br>
-        <i>Its my first HTML Project</i>
-        <br>
-        <u>I have been practising on it since 09 November 2024</u>
-    </p>
-    <hr>
-    <p>
-        Here are some info about me 
-        <br>
-        1. I play games like Minecraft
-        <br>
-        2. Im active on social platforms like 
-        <a class="btn" href="https://discord.gg/invite/Sh2UMdSVaj"> Discord </a>
-        <a class="btn insta" href="https://instagram.com/nirban2110/profilecard/?igsh=dDVmM2xIm2kyaGF5"> Instagram </a>
-        <a class="btn what" href="https://wa.me/918368925796"> Whatsapp </a>
-    <hr>
-    <!-- <p>
-        <b>Here are some links</b>
-        <br>
-        <button><a class="nirban2110" href="/Padyanava.html"> Padyanava Maity</a></button>
-        <br>
-        <button><a class="nirban2110" href="/table.html"> Table </a></button>
-    </p> -->
-    <p>Will add more soon....</p>
+<body>
+  <button class="nav-toggle" onclick="toggleMenu()">
+  <span id="menu-icon">☰</span>
+</button>
+
+
+<div class="side-menu">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <label class="theme-toggle">
+  <input type="checkbox" id="theme-toggle-checkbox" />
+  <span class="slider"></span>
+</label>
+
+  </ul>
+</div>
+  <header>
+    <h1>Hello, I'm Padyanava Maity</h1>
+    <p>Learning Coding, Web Development, Video Editing, and Social Media Management.</p>
+  </header>
+
+  <section id="home"> ... </section>
+  <section id="about"> ... </section>
+  <section id="skills"> ... </section>
+  <section id="contact"> ... </section>
+
+  <script src="script.js"></script>
 </body>
+
+  </nav>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>I am passionate about coding and web development. I aim to become skilled in video editing and social media management as well.</p>
+  </section>
+
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <ul>
+      <li>Coding</li>
+      <li>Web Development</li>
+      <li>Video Editing (Learning)</li>
+      <li>Social Media Management (Learning)</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <ul>
+      <li><strong>Phone:</strong> <a href="tel:+918368925796">+91 8368925796</a></li>
+      <li><strong>Email:</strong> <a href="mailto:nirbanmaity2121@gmail.com">nirbanmaity2121@gmail.com</a></li>
+    </ul>
+  </section>
+
+</body>
+  <script src="script.js"></script>
 </html>
