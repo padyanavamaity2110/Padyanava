@@ -29,7 +29,7 @@ body.dark-mode {
   color: var(--text-dark);
 }
 
-header, section, footer, .content-container {
+section, footer, .content-container {
   padding: 20px;
   max-width: 800px;
   margin: 20px auto;
@@ -40,7 +40,6 @@ header, section, footer, .content-container {
   transition: background 0.3s, color 0.3s;
 }
 
-body.dark-mode header,
 body.dark-mode section,
 body.dark-mode footer,
 body.dark-mode .content-container {
@@ -113,11 +112,11 @@ body.dark-mode .side-menu .nav-links a:hover {
 
 /* Nav Toggle Button */
 .nav-toggle {
-  position: fixed;
   top: 20px;
   left: 20px;
   z-index: 1000;
-  background: var(--accent-light);
+  /* background: var(--accent-light); */
+  background-color: transparent;
   color: var(--text-light);
   border: none;
   padding: 10px 14px;
@@ -132,6 +131,17 @@ body.dark-mode .side-menu .nav-links a:hover {
   height: 44px;
 }
 
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
 /* Icon color in light mode */
 .nav-toggle #menu-icon {
   color: var(--text-light);
@@ -139,7 +149,8 @@ body.dark-mode .side-menu .nav-links a:hover {
 }
 
 body.dark-mode .nav-toggle {
-  background: var(--accent-dark);
+  /* background: var(--accent-dark); */
+  background-color: transparent;
   color: var(--text-dark);
 }
 
@@ -227,4 +238,140 @@ body.dark-mode .theme-toggle input:checked + .slider {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover effect for sections */
+section:hover, footer:hover, .content-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: var(--hover-bg-light, #e8f0fe);
+  cursor: pointer;
+}
+
+/* Dark mode hover background */
+body.dark-mode section:hover,
+body.dark-mode footer:hover,
+body.dark-mode .content-container:hover {
+  background-color: var(--hover-bg-dark, #2a2a2a);
+}
+
+/* Define hover background colors as CSS variables */
+:root {
+  --hover-bg-light: #e8f0fe;
+  --hover-bg-dark: #2a2a2a;
+}
+
+header {
+  display: flex;
+  max-width: auto;
+  margin: 0;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;;
+}
+
+.header-inner {
+  display: flex;
+  margin-left: 40px;
+  align-items: center;
+  gap: 40px;
+}
+
+body.dark-mode header {
+  background-color: var(--bg-dark-secondary);
+  color: var(--text-dark);
+}
+
+.logo {
+  width: 80px; /* adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-h1 {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.photo-grid {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keep square */
+  background-color: #f0f0f0; /* Optional: background for empty space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Do not crop or stretch */
+}
+
+/* Medium screens */
+@media (max-width: 900px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens */
+@media (max-width: 500px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header img.logo {
+    width: 50px;
+    margin-bottom: 8px;
+  }
+
+  header .logo-h1 {
+    font-size: 1.3rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  /* Adjust padding and margins site-wide */
+  header, section, footer, .content-container {
+    padding: 12px;
+    margin: 12px auto;
+    max-width: 100%;
+  }
+
+  .header-inner {
+  display: flex;
+  margin-left: 30px;
+  justify-content: center;
+  gap: 10px;
+  }
 }

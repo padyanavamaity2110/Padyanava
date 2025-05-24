@@ -7,34 +7,47 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <div class="side-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <label class="theme-toggle">
+      <input type="checkbox" id="theme-toggle-checkbox" />
+      <span class="slider"></span>
+    </label>
 
-  <button class="nav-toggle" onclick="toggleMenu()">
-    <span id="menu-icon">☰</span>
-  </button>
-
-  <div class="side-menu">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <label class="theme-toggle">
-        <input type="checkbox" id="theme-toggle-checkbox" />
-        <span class="slider"></span>
-      </label>
-    </ul>
-  </div>
-
-  <header>
-    <h1>About Me</h1>
-  </header>
+      </ul>
+    </div>
+      <header>
+      <button class="nav-toggle" onclick="toggleMenu()">
+      <span id="menu-icon">☰</span>
+    </button>
+    <div class="header-inner">
+      <img class="logo" src="Pictures/Padyanava-Gamerz.png" alt="Padyanava Logo">
+      <h1 class="logo-h1">About Me</h1>
+      </div>
+    </header>
 
   <section>
     <main>
       <p>My name is <strong>Padyanava Maity</strong>, a dedicated student with a passion for Mathematics and Science. I am committed to becoming a skilled coder, ethical hacker, and programmer. My goal is to use my knowledge to solve complex problems and create innovative solutions.</p>
       <p>I continuously seek to improve my skills by learning new programming languages, understanding computer security, and exploring the latest technologies. I am focused on building a strong foundation that will support my career as a genius in my chosen fields.</p>
     </main>
+  </section>
+
+  <section>
+    <h2>My Photos</h2>
+    <div class="photo-grid">
+      <div class="photo"><img src="Pictures/IMG_20221003_213918.jpg" alt="Photo 1"></div>
+      <div class="photo"><img src="Pictures/IMG_20221004_151004.jpg" alt="Photo 2"></div>
+      <div class="photo"><img src="Pictures/IMG_20221104_135413.jpg" alt="Photo 3"></div>
+      <div class="photo"><img src="Pictures/IMG_20221105_091233.jpg" alt="Photo 4"></div>
+      <div class="photo"><img src="Pictures/IMG_20241028_073752.jpg" alt="Photo 5"></div>
+    </div>
+
   </section>
 
 </body>

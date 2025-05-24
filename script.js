@@ -5,8 +5,22 @@ function toggleMenu() {
 
   menu.classList.toggle("active");
   toggleBtn.classList.toggle("menu-open");
+  
+  // Toggle the icon text
   icon.textContent = menu.classList.contains("active") ? "☒" : "☰";
+
+  // Optional: move the button when menu is open
+  if (menu.classList.contains("active")) {
+    toggleBtn.style.position = "absolute";
+    toggleBtn.style.right = "10px";
+    toggleBtn.style.top = "10px";
+  } else {
+    toggleBtn.style.position = "relative";
+    toggleBtn.style.right = "";
+    toggleBtn.style.top = "";
+  }
 }
+
 
 function applyTheme(theme) {
   document.body.classList.remove("light-mode", "dark-mode");
@@ -45,5 +59,3 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-icon.textContent = menu.classList.contains("active") ? "☒" : "☰";
