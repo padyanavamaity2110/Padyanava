@@ -7,29 +7,43 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="side-menu">
+    <header class="main-header">
+      <div class="header-container">
+        <button class="nav-toggle" id="navToggle" aria-label="Open Menu" onclick="toggleMenu()">
+          <span id="menu-icon">☰</span>
+        </button>
+
+        <div class="logo-container">
+          <img class="logo" src="Pictures/Padyanava-Gamerz.png" alt="Padyanava Logo">
+          <h1 class="logo-h1">Hello, I'm Padyanava Maity</h1>
+        </div>
+
+        <div class="contact-buttons">
+          <a href="tel:+919999999999" class="contact-button">
+            <img src="/Pictures/phone-icon.jpg" alt="Phone" width="24" height="24">
+          </a>
+          <a href="mailto:example@email.com" class="contact-button">
+            <img src="/Pictures/email-icon.jpg" alt="Phone" width="24" height="24">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Side Menu -->
+    <nav id="sideMenu" class="side-menu">
+      <button class="close-btn" onclick="toggleMenu()">✖</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
-        <li><a href="skills.html">Skills</a></li>
         <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
         <li><a href="contact.html">Contact</a></li>
         <label class="theme-toggle">
       <input type="checkbox" id="theme-toggle-checkbox" />
       <span class="slider"></span>
     </label>
-
       </ul>
-    </div>
-      <header>
-      <button class="nav-toggle" onclick="toggleMenu()">
-      <span id="menu-icon">☰</span>
-    </button>
-    <div class="header-inner">
-      <img class="logo" src="Pictures/Padyanava-Gamerz.png" alt="Padyanava Logo">
-      <h1 class="logo-h1">My Projects</h1>
-      </div>
-    </header>
+    </nav>
 
   <main>
     <!-- <section>

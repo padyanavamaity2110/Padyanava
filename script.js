@@ -1,23 +1,13 @@
 function toggleMenu() {
-  const menu = document.querySelector(".side-menu");
-  const toggleBtn = document.querySelector(".nav-toggle");
-  const icon = document.getElementById("menu-icon");
+  const sideMenu = document.getElementById('sideMenu');
+  const menuIcon = document.getElementById('menu-icon');
 
-  menu.classList.toggle("active");
-  toggleBtn.classList.toggle("menu-open");
-  
-  // Toggle the icon text
-  icon.textContent = menu.classList.contains("active") ? "☒" : "☰";
-
-  // Optional: move the button when menu is open
-  if (menu.classList.contains("active")) {
-    toggleBtn.style.position = "absolute";
-    toggleBtn.style.right = "10px";
-    toggleBtn.style.top = "10px";
+  if (sideMenu.classList.contains('open')) {
+    sideMenu.classList.remove('open');
+    menuIcon.textContent = '☰'; // back to hamburger
   } else {
-    toggleBtn.style.position = "relative";
-    toggleBtn.style.right = "";
-    toggleBtn.style.top = "";
+    sideMenu.classList.add('open');
+    menuIcon.textContent = ''; // hide hamburger when menu is open
   }
 }
 
