@@ -42,12 +42,12 @@ section, footer, .content-container {
 
 body.dark-mode section,
 body.dark-mode footer,
-body.dark-mode .content-container
-body.dark-mode .main-header
+body.dark-mode .content-container,
+body.dark-mode .main-header,
 body.dark-mode .side-menu {
   background-color: var(--bg-dark-secondary);
   color: var(--text-dark);
-  max-width: 800px;
+  max-width: auto;
   box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
 }
 
@@ -63,7 +63,7 @@ body.dark-mode .side-menu {
   padding: 20px;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   transition: left 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  z-index: 1050;
+  z-index: 999;
 }
 
 .side-menu.open {
@@ -72,13 +72,17 @@ body.dark-mode .side-menu {
 
 .close-btn {
   font-size: 1.5rem;
-  color: white;
+  color: gray;
   background: none;
   border: none;
   position: absolute;
   top: 15px;
   right: 15px;
   cursor: pointer;
+}
+
+body.dark-mode .close-btn {
+  color: var(--text-dark);
 }
 
 body.dark-mode .side-menu {
@@ -271,39 +275,28 @@ body.dark-mode .content-container:hover {
 }
 
 .main-header {
-  width: auto;
+  display: flex;
+  max-width: auto;
   background-color: #e8f0fe;
   color: var(--text-light);
   padding: 20px 20px;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   align-self: center;
   margin: 0px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s, color 0.3s;
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-wrap: wrap; */
   width: 100%;
   gap: 20px;
   flex-direction: column;
 }
-
-/* header {
-  display: flex;
-  max-width: auto;
-  margin: 0;
-  padding: 20px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  background-color: var(--bg-light);
-  color: var(--text-light);
-  transition: background 0.3s, color 0.3s;;
-} */
 
 .header-inner {
   display: flex;
