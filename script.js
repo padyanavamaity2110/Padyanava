@@ -4,10 +4,10 @@ function toggleMenu() {
 
   if (sideMenu.classList.contains('open')) {
     sideMenu.classList.remove('open');
-    menuIcon.textContent = '☰'; // back to hamburger
+    menuIcon.textContent = '☰';
   } else {
     sideMenu.classList.add('open');
-    menuIcon.textContent = ''; // hide hamburger when menu is open
+    menuIcon.textContent = '';
   }
 }
 

@@ -9,6 +9,9 @@
   --bg-dark-secondary: #212020;
   --text-dark: #C6C2C3;
   --accent-dark: #383636;
+
+  --hover-bg-light: #e8f0fe;
+  --hover-bg-dark: #2a2a2a;
 }
 
 * {
@@ -29,7 +32,7 @@ body.dark-mode {
   color: var(--text-dark);
 }
 
-section, footer, .content-container {
+section,.content-container {
   padding: 20px;
   max-width: 800px;
   margin: 20px auto;
@@ -43,7 +46,6 @@ section, footer, .content-container {
 body.dark-mode section,
 body.dark-mode footer,
 body.dark-mode .content-container,
-body.dark-mode .main-header,
 body.dark-mode .side-menu {
   background-color: var(--bg-dark-secondary);
   color: var(--text-dark);
@@ -156,18 +158,13 @@ body.dark-mode .side-menu .nav-links a:hover {
 
 /* Icon color in light mode */
 .nav-toggle #menu-icon {
-  color: var(--text-light);
+  color: var(--text-dark);
   transition: color 0.3s ease;
 }
 
 body.dark-mode .nav-toggle {
-  /* background: var(--accent-dark); */
+  background: var(--accent-dark);
   background-color: transparent;
-  color: var(--text-dark);
-}
-
-/* Icon color in dark mode */
-body.dark-mode .nav-toggle #menu-icon {
   color: var(--text-dark);
 }
 
@@ -253,7 +250,7 @@ body.dark-mode .theme-toggle input:checked + .slider {
 }
 
 /* Hover effect for sections */
-section:hover, footer:hover, .content-container:hover {
+section:hover, .content-container:hover {
   transform: scale(1.02);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
@@ -263,29 +260,18 @@ section:hover, footer:hover, .content-container:hover {
 
 /* Dark mode hover background */
 body.dark-mode section:hover,
-body.dark-mode footer:hover,
 body.dark-mode .content-container:hover {
   background-color: var(--hover-bg-dark, #2a2a2a);
-}
-
-/* Define hover background colors as CSS variables */
-:root {
-  --hover-bg-light: #e8f0fe;
-  --hover-bg-dark: #2a2a2a;
 }
 
 .main-header {
   display: flex;
   max-width: auto;
-  background-color: #e8f0fe;
-  color: var(--text-light);
+  background-color: var(--bg-dark-secondary);
+  color: var(--text-dark);
   padding: 20px 20px;
-  top: 0;
-  left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   align-self: center;
-  margin: 0px;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -303,11 +289,6 @@ body.dark-mode .content-container:hover {
   margin-left: 40px;
   align-items: center;
   gap: 40px;
-}
-
-body.dark-mode header {
-  background-color: var(--bg-dark-secondary);
-  color: var(--text-dark);
 }
 
 .logo {
@@ -386,33 +367,33 @@ body.dark-mode header {
 }
 
 @media (max-width: 600px) {
-  header {
+header {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  header img.logo {
+header img.logo {
     width: 50px;
     margin-bottom: 8px;
   }
 
-  header .logo-h1 {
+header .logo-h1 {
     font-size: 1.3rem;
   }
 
-  header p {
+header p {
     font-size: 0.9rem;
     margin-top: 4px;
   }
 
   /* Adjust padding and margins site-wide */
-  header, section, footer, .content-container {
+header, section, footer, .content-container {
     padding: 12px;
     margin: 12px auto;
     max-width: 100%;
   }
 
-  .header-inner {
+.header-inner {
   display: flex;
   margin-left: 30px;
   justify-content: center;
