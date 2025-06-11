@@ -1,15 +1,7 @@
 function toggleMenu() {
-  const sideMenu = document.getElementById('sideMenu');
-  const menuIcon = document.getElementById('menu-icon');
-
-  if (sideMenu.classList.contains('open')) {
-    sideMenu.classList.remove('open');
-    menuIcon.textContent = '☰';
-  } else {
-    sideMenu.classList.add('open');
-    menuIcon.textContent = '';
+    const menu = document.querySelector('.side-menu');
+    menu.classList.toggle('active');
   }
-}
 
 
 function applyTheme(theme) {

@@ -65,7 +65,7 @@ body.dark-mode .side-menu {
   padding: 20px;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   transition: left 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .side-menu.open {
