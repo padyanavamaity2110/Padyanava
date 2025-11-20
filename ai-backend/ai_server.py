@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import requests
 import os
 import logging
@@ -9,19 +9,19 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-# SPECIFIC CORS for your GitHub Pages domain
-CORS(app, origins=[
-    "https://padyanavamaity2110.github.io",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"
-])
+# Complete CORS setup
+CORS(app, resources={
+    r"/*": {
+        "origins": ["https://padyanavamaity2110.github.io", "http://localhost:3000"],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
 
-@app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', 'https://padyanavamaity2110.github.io')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-    return response
+@app.before_request
+def before_request():
+    if request.method == 'OPTIONS':
+        return '', 200
 
 user_preferences = {}
 
@@ -34,7 +34,7 @@ def query_qwen_api(message):
         
         payload = {
             "messages": [{"role": "user", "content": message}],
-            "model": "Qwen/Qwen2.5-7B-Instruct:together",
+            "model": "Qwen/Qwen2.5-7B-Instruct:together", 
             "max_tokens": 500,
             "temperature": 0.7
         }
@@ -53,6 +53,7 @@ def query_qwen_api(message):
         return f"Hello! I'm Velz. You said: '{message}'"
 
 @app.route('/chat', methods=['POST', 'GET', 'OPTIONS'])
+@cross_origin()
 def chat():
     try:
         if request.method == 'GET':
@@ -78,10 +79,12 @@ def chat():
         return jsonify({'reply': 'Sorry, I encountered an error'})
 
 @app.route('/health', methods=['GET'])
+@cross_origin()
 def health():
     return jsonify({'status': 'active', 'service': 'Velz AI'})
 
 @app.route('/')
+@cross_origin()
 def home():
     return jsonify({'message': 'Velz AI Server is running!'})
 
