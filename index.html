@@ -1,103 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Padyanava Maity Portfolio</title>
-  <link rel="icon" href="Pictures/Padyanava-Gamerz.png" type="image/png">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="footer.css">
-</head>
-<body>
-    <header class="main-header">
-       <button class="nav-toggle" id="navToggle" aria-label="Open Menu" onclick="toggleMenu()">
-          <span id="menu-icon">☰</span>
-        </button>
-      <div class="header-container">
-        <div class="logo-container">
-          <a href="index.html"><img class="logo" src="Pictures/Padyanava-Gamerz.png" alt="Padyanava Logo"></a>
-          <h1 class="logo-h1">Hello, I'm Padyanava Maity</h1>
-        </div>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Padyanava Maity — Portfolio</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" href="/Pictures/Padyanava-Gamerz.png" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="brand">
+				<img src="/Pictures/Padyanava-Gamerz.png" alt="profile" class="avatar" />
+				<div>
+					<h1>Padyanava Maity</h1>
+					<p class="muted">Student • Aspiring Full‑stack &amp; AI Creator</p>
+				</div>
+			</div>
+			<nav class="nav">
+				<a href="index.html">Home</a>
+				<a href="chat.html" class="cta">Chat with AI</a>
+			</nav>
+		</header>
 
-        <div class="contact-buttons">
-          <a href="tel:+918368925796" class="contact-button">
-            <img src="Pictures/phone-icon.jpg" alt="Phone" width="24" height="24">
-          </a>
-          <a href="mailto:nirbanmaity2121@gmail.com" class="contact-button">
-            <img src="Pictures/email-icon.jpg" alt="Phone" width="24" height="24">
-          </a>
-        </div>
-      </div>
-    </header>
+		<main class="container">
+			<section class="hero">
+				<h2>Hi — I build things that learn.</h2>
+				<p>
+					Portfolio, projects, and a lightweight AI chat assistant — dark themed
+					and hosted on GitHub Pages.
+				</p>
+				<p class="actions">
+					<a class="btn" href="#projects">View projects</a>
+					<a class="btn outline" href="chat.html">Open AI Chat</a>
+				</p>
+			</section>
 
-    <!-- Side Menu -->
-    <nav id="sideMenu" class="side-menu">
-      <button class="close-btn" onclick="toggleMenu()">✖</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <label class="theme-toggle">
-      <input type="checkbox" id="theme-toggle-checkbox" />
-      <span class="slider"></span>
-    </label>
-      </ul>
-    </nav>
+			<section id="about" class="card">
+				<h3>About</h3>
+				<p>
+					I am a student learning software development and AI. I like building
+					useful tools and polished web experiences.
+				</p>
+				<ul class="skills">
+					<li>JavaScript / HTML / CSS</li>
+					<li>Python (AI / Backend)</li>
+					<li>Git &amp; GitHub</li>
+				</ul>
+			</section>
 
- <div>
-  <section id="home"> ... </section>
-  <section id="about"> ... </section>
-  <section id="skills"> ... </section>
-  <section id="contact"> ... </section>
-  </div>
+			<section id="projects" class="card">
+				<h3>Selected Projects</h3>
+				<div class="grid">
+					<article class="tile">
+						<h4>Personal AI Chatbot</h4>
+						<p>
+							Dark themed chat UI + lightweight backend API that you can host
+							anywhere.
+						</p>
+					</article>
+					<article class="tile">
+						<h4>Portfolio Website</h4>
+						<p>
+							Static site deployed to GitHub Pages with a minimal modern
+							design.
+						</p>
+					</article>
+				</div>
+			</section>
 
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>I am passionate about coding and web development. I aim to become skilled in video editing and social media management as well.</p>
-  </section>
+			<section id="contact" class="card small">
+				<h3>Contact</h3>
+				<p>
+					Prefer email?
+					<a href="mailto:your-email@example.com">your-email@example.com</a>
+				</p>
+				<p class="muted">Replace this email in the files with your own.</p>
+			</section>
+		</main>
 
-  <section id="skills" class="fade-in">
-    <h2>Skills</h2>
-    <ul>
-      <li>Coding</li>
-      <li>Web Development</li>
-      <li>Video Editing (Learning)</li>
-      <li>Social Media Management (Learning)</li>
-    </ul>
-  </section>
-
-  <section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <ul>
-      <li><strong>Phone:</strong> <a href="tel:+918368925796">+91 8368925796</a></li>
-      <li><strong>Email:</strong> <a href="mailto:nirbanmaity2121@gmail.com">nirbanmaity2121@gmail.com</a></li>
-    </ul>
-  </section>
-
- <!-- <footer class="footer">
-            <div>
-                <div class="div1">
-                    <h3 style="color: #FFD700;">Contacts</h3>
-                    <a class="link1" href="mailto:nirbanmaity2121@gmail.com">nirbanmaity2121@gmail.com</a></p>
-                    <p>📞 <a class="link1" href="tel:+918368925796">+91 83689-25796</a></p>
-                </div>
-        <br>
-                <div class="div1">
-                    <h3 style="color: #FFD700;">Socials</h3>
-                    <a class="link2" href="https://www.instagram.com/nirban2110" target="_blank">Instagram</a> | 
-                    <a class="link2" href="https://www.facebook.com/padyanava2110" target="_blank">Facebook</a> |
-                    <a class="link2" href="https://x.com/padyanavamaity?t=iY212aCCT8mYA22CK6ArSw&s=09" target="_blank">X</a> |
-                    <a class="link2" href="https://https://github.com/padyanavamaity2110" target="_blank">GitHub</a>
-                </div>
-            </div>
-    
-            <hr style="border: 0.5px solid #FFD700; width: 80%; margin: 20px auto;">
-        
-            <p style="margin: 10px 0; font-size: 14px;">© 2025 Padyanava Maity. All Rights Reserved.</p>
-        </footer> -->
-
-</body>
-  <script src="script.js"></script>
+		<footer class="site-footer">
+			<p class="muted">© Padyanava Maity</p>
+		</footer>
+	</body>
 </html>

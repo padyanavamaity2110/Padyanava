@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AI Chat — Padyanava</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/Pictures/Padyanava-Gamerz.png" />
+  </head>
+  <body class="chat-page">
+    <header class="site-header small">
+      <div class="brand">
+        <img src="/Pictures/Padyanava-Gamerz.png" alt="profile" class="avatar small" />
+        <div>
+          <h1>AI Chat</h1>
+          <p class="muted">Connected to your API</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Back to Portfolio</a>
+      </nav>
+    </header>
+
+    <main class="chat-container">
+      <div id="chat" class="chat-window" aria-live="polite"></div>
+
+      <form id="chat-form" class="chat-form" autocomplete="off">
+        <button
+          type="button"
+          id="prefs-btn"
+          title="Preferences"
+          aria-label="prefs"
+        >
+          ⚙️
+        </button>
+        <input
+          id="input"
+          name="message"
+          placeholder="Ask something..."
+          required
+        />
+        <button id="send">Send</button>
+      </form>
+    </main>
+
+    <div id="prefs" class="prefs-panel hidden">
+      <h4>Chat Preferences</h4>
+      <label>
+        <input type="checkbox" id="save-history" /> Save history in browser
+      </label>
+      <label>
+        <span>System prompt</span>
+        <textarea
+          id="system-prompt"
+          rows="3"
+          placeholder="Optional: instruct your assistant"
+        ></textarea>
+      </label>
+      <p class="muted">Changes saved to localStorage.</p>
+      <button id="close-prefs">Close</button>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
