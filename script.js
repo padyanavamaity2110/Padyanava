@@ -1,5 +1,5 @@
 // Configuration - UPDATE THIS AFTER DEPLOYMENT
-const API_BASE_URL = 'http://localhost:5000'; // Change to your deployed backend URL
+const API_BASE_URL = 'https://8080-cs-1b6510d6-1baa-42d4-97d2-6447f0d617b4.cs-asia-southeast1-seal.cloudshell.dev/'; // Change to your deployed backend URL
 
 // DOM Elements
 const chatEl = document.getElementById('chat');
