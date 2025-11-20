@@ -10,11 +10,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-CORS(app, origins=[
-    "https://padyanavamaity2110.github.io",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"
-])
+CORS(app)
 
 # QWEN API Configuration
 API_URL = "https://router.huggingface.co/v1/chat/completions"
