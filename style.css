@@ -44,7 +44,7 @@ body {
 .avatar {
   width: 64px;
   height: 64px;
-  border-radius: 12px;
+  border-radius: 100%;
   object-fit: cover;
   border: 2px solid rgba(255, 255, 255, 0.04);
 }
@@ -88,23 +88,12 @@ body {
 .hero h2 {
   margin: 0 0 8px 0;
 }
-.actions .btn {
+.actions {
   display: inline-block;
   margin-right: 10px;
   padding: 10px 14px;
   border-radius: 12px;
   background: var(--accent);
-  color: #021018;
-  text-decoration: none;
-  font-weight: 600;
-}
-.btn.outline {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  color: var(--text);
-}
-
-.card {
   margin-top: 20px;
   padding: 18px;
   border-radius: 14px;
@@ -147,221 +136,118 @@ body {
   color: var(--muted);
 }
 
-/* Chat page */
-.chat-page .chat-container {
-  max-width: 900px;
-  margin: 22px auto;
-  padding: 0 12px;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 160px);
-}
-.chat-window {
-  flex: 1;
-  overflow: auto;
-  padding: 18px;
-  border-radius: 14px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.01),
-    rgba(255, 255, 255, 0.005)
-  );
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.msg {
-  max-width: 78%;
-  padding: 12px;
-  border-radius: 12px;
-  line-height: 1.4;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
-}
-.msg.user {
-  align-self: flex-end;
-  background: linear-gradient(180deg, var(--accent), #20e0ff);
-  color: #001018;
-  border-bottom-right-radius: 4px;
-}
-.msg.bot {
-  align-self: flex-start;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.02);
-}
-.chat-form {
-  display: flex;
-  gap: 8px;
-  padding: 14px;
-  margin-top: 12px;
-  align-items: center;
-}
-.chat-form input {
-  flex: 1;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  background: transparent;
-  color: var(--text);
-}
-.chat-form button {
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: none;
-  background: var(--accent);
-  color: #001018;
-  font-weight: 700;
-}
-#prefs-btn {
-  background: transparent;
-  border: none;
-  color: var(--muted);
-  font-size: 18px;
-}
-
-.prefs-panel {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: var(--panel);
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-  width: 320px;
-}
-.prefs-panel.hidden {
+.avatar {
   display: none;
 }
-
-@media (max-width: 720px) {
-  .avatar {
-    display: none;
-  }
-  .container {
-    padding: 0 14px;
-  }
-  .chat-page .chat-container {
-    height: calc(100vh - 120px);
-  }
+.container {
+  padding: 0 14px;
 }
 
-/* Enhanced Chat Styles for Dark Theme */
-.chat-form input:focus {
-  border-color: var(--accent) !important;
-  background: rgba(0, 229, 255, 0.05) !important;
-  outline: none;
+/* HEADER BASE */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--panel);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
 }
 
-.chat-form button:disabled {
-  background: var(--muted) !important;
-  opacity: 0.5;
-  cursor: not-allowed;
+/* NAV (desktop default) */
+.nav {
+  display: flex;
+  gap: 1rem;
 }
 
-.msg.loading {
-  opacity: 0.7;
-  font-style: italic;
-  background: rgba(255, 255, 255, 0.02) !important;
-}
-
-/* Preferences panel enhancements */
-.prefs-panel h4 {
-  margin: 0 0 16px 0;
-  color: var(--text);
-  font-size: 16px;
-}
-
-.prefs-panel label {
-  display: block;
-  margin-bottom: 16px;
-  color: var(--text);
-  font-size: 14px;
-}
-
-.prefs-panel input[type="checkbox"] {
-  margin-right: 8px;
-  accent-color: var(--accent);
-}
-
-.prefs-panel textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  background: rgba(255, 255, 255, 0.02);
-  color: var(--text);
-  font-family: inherit;
-  resize: vertical;
-  margin-top: 8px;
-}
-
-.prefs-panel textarea:focus {
-  border-color: var(--accent);
-  outline: none;
-}
-
-.prefs-panel button {
-  background: var(--accent);
-  color: #001018;
+/* HAMBURGER BUTTON */
+.menu-toggle {
+  display: none;
+  background: none;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
+  width: 36px;
+  height: 28px;
+  position: relative;
+}
+
+.menu-toggle span {
+  position: absolute;
+  left: 0;
   width: 100%;
-  margin-top: 8px;
+  height: 2px;
+  background: var(--text);
+  transition: all 0.3s ease;
 }
 
-.prefs-panel button:hover {
-  background: #20e0ff;
+.menu-toggle span:nth-child(1) {
+  top: 4px;
 }
 
-/* Scrollbar styling for chat window */
-.chat-window::-webkit-scrollbar {
-  width: 6px;
+.menu-toggle span:nth-child(2) {
+  top: 13px;
 }
 
-.chat-window::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 3px;
+.menu-toggle span:nth-child(3) {
+  bottom: 4px;
 }
 
-.chat-window::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
-  opacity: 0.3;
-}
-
-/* Mobile optimizations */
-@media (max-width: 720px) {
-  .msg {
-    max-width: 85% !important;
-    padding: 10px 12px !important;
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
   }
 
-  .prefs-panel {
-    right: 10px !important;
-    left: 10px !important;
-    bottom: 10px !important;
-    width: auto !important;
+  /* MOBILE NAV PANEL – FIXED */
+  .nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 1rem;
+    width: min(260px, calc(100vw - 2rem));
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    z-index: 100;
   }
 
-  .chat-form {
-    padding: 12px 8px !important;
+  .site-header.menu-open .nav {
+    display: flex;
   }
-}
 
-/* Animation for new messages */
-@keyframes messageSlide {
-  from {
+  /* NAV LINKS – MOBILE REWORK */
+  .nav .cta {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav .cta:hover {
+    background: rgba(0, 229, 255, 0.08);
+    color: var(--accent);
+  }
+
+  /* HAMBURGER → CROSS (unchanged, included for clarity) */
+  .site-header.menu-open .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 13px;
+  }
+
+  .site-header.menu-open .menu-toggle span:nth-child(2) {
     opacity: 0;
-    transform: translateY(10px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.msg {
-  animation: messageSlide 0.3s ease-out;
+  .site-header.menu-open .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 13px;
+  }
 }
