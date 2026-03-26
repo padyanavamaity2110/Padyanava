@@ -67,6 +67,7 @@ body {
   margin-left: 14px;
 }
 .nav .cta {
+  background: linear-gradient(90deg, var(--accent), #4bdfff);
   padding: 8px 12px;
   border-radius: 10px;
   color: #020202;
@@ -135,9 +136,6 @@ body {
   color: var(--muted);
 }
 
-.avatar {
-  display: none;
-}
 .container {
   padding: 0 14px;
 }
@@ -221,6 +219,7 @@ body {
 
   /* NAV LINKS – MOBILE REWORK */
   .nav .cta {
+    background: transparent;
     display: block;
     padding: 0.65rem 0.75rem;
     border-radius: 8px;
