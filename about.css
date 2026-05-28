@@ -1,0 +1,16 @@
+:root {
+  --bg: #0b0d0f;
+  --panel: #0f1113;
+  --muted: #9aa4ab;
+  --text: #e8f1f4;
+  --accent: #00e5ff; /* cyan accent */
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 14px;
+  --mono: "Segoe UI Mono", ui-monospace, Menlo, monospace;
+}
+
+.body {
+  max-width: 1080px;
+  margin: 20px auto;
+  padding: 0 10px;
+}

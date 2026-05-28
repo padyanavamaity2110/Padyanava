@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Page Not Found</title>
+
+    <link rel="stylesheet" href="404.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="panel">
+        <div class="error-code">404</div>
+
+        <h1 class="title">Page Not Found</h1>
+
+        <p class="message">
+          The requested resource could not be located on this server.
+        </p>
+
+        <div class="actions">
+          <button id="backBtn" class="btn secondary">Go Back</button>
+          <a href="/" class="btn primary">Go to Home</a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const backBtn = document.getElementById("backBtn");
+
+      backBtn.addEventListener("click", () => {
+        window.history.back();
+      });
+    </script>
+  </body>
+</html>

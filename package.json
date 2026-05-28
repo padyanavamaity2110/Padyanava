@@ -1,0 +1,11 @@
+{
+  "name": "padyanava-website",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  },
+  "scripts": {
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\""
+  }
+}

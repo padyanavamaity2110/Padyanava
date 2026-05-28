@@ -1,44 +1,15 @@
-function toggleMenu() {
-    const menu = document.querySelector('.side-menu');
-    menu.classList.toggle('active');
-  }
+const header = document.querySelector(".site-header");
+const toggleBtn = document.querySelector(".menu-toggle");
+const navLinks = document.querySelectorAll(".nav a");
 
-
-function applyTheme(theme) {
-  document.body.classList.remove("light-mode", "dark-mode");
-  document.body.classList.add(`${theme}-mode`);
-  localStorage.setItem("theme", theme);
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const activeTheme = savedTheme || (prefersDark ? "dark" : "light");
-  applyTheme(activeTheme);
-
-  const themeToggleCheckbox = document.getElementById("theme-toggle-checkbox");
-  if (themeToggleCheckbox) {
-    themeToggleCheckbox.checked = (activeTheme === "dark");
-
-    themeToggleCheckbox.addEventListener("change", () => {
-      const newTheme = themeToggleCheckbox.checked ? "dark" : "light";
-      applyTheme(newTheme);
-    });
-  }
-
-  document.querySelectorAll("header, nav, section").forEach(el => {
-    el.classList.add("fade-in");
-  });
-
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
-
-  const mobileToggle = document.querySelector(".menu-toggle");
-  if (mobileToggle) {
-    mobileToggle.addEventListener("click", () => {
-      document.querySelector(".nav-menu").classList.toggle("show");
-    });
-  }
+toggleBtn.addEventListener("click", () => {
+  const isOpen = header.classList.toggle("menu-open");
+  toggleBtn.setAttribute("aria-expanded", isOpen);
 });
 
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    header.classList.remove("menu-open");
+    toggleBtn.setAttribute("aria-expanded", "false");
+  });
+});
